@@ -1,0 +1,23 @@
+{
+  "name": "bank-tech-test",
+  "version": "1.0.0",
+  "description": "Learning Objective: - Improving design and TDD skills through individual practice - Reviewing my own code so I can practice reflecting and improving my own work",
+  "main": "bankAccount.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlchambers/bank-tech-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tlchambers/bank-tech-test/issues"
+  },
+  "homepage": "https://github.com/tlchambers/bank-tech-test#readme",
+  "dependencies": {
+    "jest": "^29.4.2"
+  }
+}
