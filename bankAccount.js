@@ -1,39 +1,44 @@
 class BankAccount {
-	constructor() {
-		this.balance = 0;
-		this.requestHistory = [];
-	}
+  constructor() {
+    this.balance = 0;
+    this.requestHistory = [];
+  }
 
-	request(type, amount, date) {
-		if (typeof amount != "number") {
-			throw new Error("The amount you enter must be a number");
-		} 
+  request(type, amount, date) {
+    if (typeof amount != "number") {
+      throw new Error("The amount you enter must be a number");
+    }
 
-		return this.requestHistory.push({
-			transactionType: `${type}`,
-			amount: amount,
-			date: `${date}`,
-		});
-	}
+    this.requestHistory.push({
+      transactionType: `${type}`,
+      amount: amount,
+      date: `${date}`,
+    });
 
-	allTransactions() {
-		return this.requestHistory;
-	}
+    if (type === "deposit") {
+      this.balance = this.balance + amount;
+    } else if (type === "withdrawal") {
+      if (amount > this.balance) {
+        throw new Error("Withdrawl sum exceeds balance")
+      } 
+      this.balance = this.balance - amount;
+    }
+  }
 
-	currentBalance() {
-		this.requestHistory.forEach((transaction) => {
-			if (transaction.transactionType === "credit") {
-				this.balance = this.balance + transaction.amount;
-			} else if (transaction.transactionType === "debit") {
-				this.balance = this.balance - transaction.amount;
-			}
-		});
-		return this.balance;
-	}
+  allTransactions() {
+    return this.requestHistory;
+  }
+
+  currentBalance() {
+    return this.balance;
+  }
 }
 
 module.exports = BankAccount;
 
 // const account = new BankAccount();
-// console.log(account.request("credit", "1000", "10/01/2023"));
+// console.log(account.request("deposit", 1000, "10/01/2023"));
+// console.log(account.request("deposit", 1000, "15/01/2023"));
+// console.log(account.request("deposit", 1000, "15/01/2023"));
+// console.log(account.allTransactions());
 // console.log(account.currentBalance());
