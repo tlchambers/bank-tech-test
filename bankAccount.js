@@ -4,10 +4,14 @@ class BankAccount {
 		this.requestHistory = [];
 	}
 
-	request(type, sum, date) {
+	request(type, amount, date) {
+		if (typeof amount != "number") {
+			throw new Error("The amount you enter must be a number");
+		} 
+
 		return this.requestHistory.push({
 			transactionType: `${type}`,
-			amount: sum,
+			amount: amount,
 			date: `${date}`,
 		});
 	}
@@ -18,7 +22,6 @@ class BankAccount {
 
 	currentBalance() {
 		this.requestHistory.forEach((transaction) => {
-			console.log("-----1----", transaction);
 			if (transaction.transactionType === "credit") {
 				this.balance = this.balance + transaction.amount;
 			} else if (transaction.transactionType === "debit") {
@@ -32,6 +35,5 @@ class BankAccount {
 module.exports = BankAccount;
 
 // const account = new BankAccount();
-// account.request("credit", 1000.0, "10/01/2023");
-// account.request("debit", 500.0, "10/01/2023");
+// console.log(account.request("credit", "1000", "10/01/2023"));
 // console.log(account.currentBalance());
