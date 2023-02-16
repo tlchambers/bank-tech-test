@@ -6,42 +6,42 @@ describe("Given BankAccount", () => {
     expect(account.currentBalance()).toEqual(0);
   });
 
-  it('stores the deposit request the client make of 1000.00 on "10/01/2023"', () => {
+  it('stores the deposit request the client make of 1000 on "10/01/2023"', () => {
     const account = new BankAccount();
-    account.request("deposit", 1000.0, "10/01/2023");
+    account.request("10/01/2023", "deposit", 1000);
     expect(account.allTransactions()).toEqual([
-      { transactionType: "deposit", amount: 1000, date: "10/01/2023" },
+      { date: "10/01/2023", transaction: "deposit", amount: 1000, "balance": 1000 },
     ]);
   });
 
   it("store multiple requests the client make", () => {
     const account = new BankAccount();
-    account.request("deposit", 1000, "10/01/2023");
-    account.request("withdrawal", 500, "13/01/2023");
+    account.request("10/01/2023", "deposit", 1000);
+    account.request("13/01/2023", "withdrawal", 500);
     expect(account.allTransactions()).toEqual([
-      { transactionType: "deposit", amount: 1000, date: "10/01/2023" },
-      { transactionType: "withdrawal", amount: 500, date: "13/01/2023" },
+      { date: "10/01/2023", transaction: "deposit", amount: 1000, "balance": 1000 },
+      { date: "13/01/2023", transaction: "withdrawal", amount: 500, "balance": 500 },
     ]);
   });
 
   it("updates the balance when client makes a deposit of 1000.00", () => {
     const account = new BankAccount();
-    account.request("deposit", 1000.0, "10/01/2023");
-    expect(account.currentBalance()).toEqual(1000.0);
+    account.request("10/01/2023", "deposit", 1000);
+    expect(account.currentBalance()).toEqual(1000);
   });
 
   it("updates the balance when client makes multiple deposit requests", () => {
     const account = new BankAccount();
-    account.request("deposit", 1, "10/01/2023");
-    account.request("deposit", 2, "13/01/2023");
-    expect(account.currentBalance()).toEqual(3);
+    account.request("10/01/2023", "deposit", 1000);
+    account.request("13/01/2023", "deposit", 2000);
+    expect(account.currentBalance()).toEqual(3000);
   });
 
   it("updates the balance when client makes multiple deposit and debit requests", () => {
     const account = new BankAccount();
-    account.request("deposit", 1000.0, "10/01/2023");
-    account.request("deposit", 2000.0, "13/01/2023");
-    account.request("withdrawal", 500.0, "14/01/2023");
+    account.request("10/01/2023", "deposit", 1000);
+    account.request("13/01/2023", "deposit", 2000);
+    account.request("14/01/2023", "withdrawal", 500);
     expect(account.currentBalance()).toEqual(2500.0);
   });
 
@@ -52,11 +52,11 @@ describe("Given BankAccount", () => {
     );
   });
 
-  it("should throw error when client makes a withdrawal request that is greater than the value of their balance", () => {
+  it("should throw error when client makes a withdrawal request that is greater than their balance", () => {
     const account = new BankAccount();
-    account.request("deposit", 1000.0, "10/01/2023");
+    account.request("10/01/2023", "deposit", 1000);
 
-    expect(() => account.request("withdrawal", 1500.0, "14/01/2023")).toThrow(
+    expect(() => account.request("14/01/2023", "withdrawal", 1500 )).toThrow(
       "Withdrawl sum exceeds balance"
     );
   });
