@@ -24,9 +24,7 @@ Then she would see
 |13/01/2023|2000.00 |-------| 3000.00 |
 |10/01/2023|1000.00 |-------| 1000.00 |
 
-## Quickstart
-
-### Install Node.js
+### Set up your project
 
 1. Fork this repository
 2. Clone your fork to your local machine
