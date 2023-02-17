@@ -6,7 +6,8 @@ Learning Objective:
 
 # Specification
 Requirements
-You should be able to interact with your code via a REPL like IRB or Node. (You don't need to implement a command line interface that takes input from STDIN.)
+You should be able to interact with your code via a REPL like IRB or Node. 
+(You don't need to implement a command line interface that takes input from STDIN.)
 Deposits, withdrawal.
 Account statement (date, amount, balance) printing.
 Data can be kept in memory (it doesn't need to be stored to a database or anything).
@@ -22,4 +23,22 @@ Then she would see
 |14/01/2023|--------| 500.00| 2500.00 |
 |13/01/2023|2000.00 |-------| 3000.00 |
 |10/01/2023|1000.00 |-------| 1000.00 |
+
+## Quickstart
+
+### Install Node.js
+
+1. Fork this repository
+2. Clone your fork to your local machine
+3. Install Node.js
+  ```
+   ; cd back-tech-tes
+   ; npm install
+   ; npm init -y
+   ; npm add jest
+   ; npm install -g jest
+
+   # Run our tests
+   ; jest
+   ```
 
