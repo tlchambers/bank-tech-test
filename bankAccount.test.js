@@ -19,8 +19,8 @@ describe("Given BankAccount", () => {
     account.request("10/01/2023", "deposit", 1000);
     account.request("13/01/2023", "withdrawal", 500);
     expect(account.allTransactions()).toEqual([
-      { date: "10/01/2023", transaction: "deposit", amount: 1000, "balance": 1000 },
       { date: "13/01/2023", transaction: "withdrawal", amount: 500, "balance": 500 },
+      { date: "10/01/2023", transaction: "deposit", amount: 1000, "balance": 1000 },
     ]);
   });
 

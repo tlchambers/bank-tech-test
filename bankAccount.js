@@ -22,12 +22,12 @@ class BankAccount {
       date: `${date}`,
       transaction: `${type}`,
       amount: amount,
-      balance:this.balance,
+      balance: this.balance,
     });
   }
 
   allTransactions() {
-    return this.requestHistory
+    return this.requestHistory.reverse();
   }
 
   currentBalance() {
