@@ -40,7 +40,7 @@ You will need to install `jest` before you are able run the test suite:
 ; statement.displayStatement()
 ```
 ## Screen Shot of Running the App and the Output
-<img src="bank-tech-test.png" width="500" >
+<img src="bank-tech-test.png" width="600" >
 
 ## Purpose of Bank-tech-test
 Learning Objective:
