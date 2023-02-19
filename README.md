@@ -26,8 +26,6 @@ You will need to install `jest` before you are able run the test suite:
 ```
 
 ## Running The Project via Command Line
-![Bank Tech Test Command Line](bank-tech-test.png)
-
 ```
 ; node
 > Welcome to Node.js v19.4.0.
@@ -42,10 +40,9 @@ You will need to install `jest` before you are able run the test suite:
 ; statement.displayStatement()
 ```
 ## Screen Shot of Running the App and the Output
-
+![Bank Tech Test Command Line](bank-tech-test.png)
 
 ## Purpose of Bank-tech-test
-
 Learning Objective:
 
 - Improving design and TDD skills through individual practice
