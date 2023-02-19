@@ -28,20 +28,13 @@ You will need to install `jest` before you are able run the test suite:
   ; node
   > Welcome to Node.js v19.4.0.
     Type ".help" for more information.
-  ; const BankAccount = require('./bankAccount.js')
-  > undefined
-  ; const Atatement = require('./statement.js')
-  > undefined
+  ; const account = require('./bankAccount.js')
+  ; const Statement = require('./statement.js')
   ; const account = new BankAccout()
-  > undefined
   ; account.request('10/01/2023', 'deposit', 1000.00);
-  > undefined
   ; account.request('13/01/2023', 'deposit', 2000.00);
-  > undefined
   ; account.request('14/01/2023', 'withdrawal', 500.00);
-  > undefined
   ; const statment = new Statement(account)
-  > undefined
   ; statement.displayStatement()
    ```
 
