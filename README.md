@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-An application that displays the deposits, withdrawal of account statment, built with JavaScript. User is able to interact with their code via Read-Eval-Print Loop (REPL) node. It captures the user's JavaScript code inputs, interprets, and evaluates the result of the code. It displays the result to the screen, and repeats the process till the user quits the shell.
+An application that displays the deposits, withdrawal of account statment, built with JavaScript. User is able to interact with their code via Read-Eval-Print Loop (REPL) node. It captures the user's JavaScript code inputs, interprets, and evaluates the result of the code. It displays the result to the screen.
 
 ## Installation and Setup Instructions
 
