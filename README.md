@@ -25,6 +25,14 @@ You will need to install `jest` before you are able run the test suites:
  ; jest
 ```
 
+## Test Coverage and Screen Shot of Result
+To run test coverage:
+```
+ # Run test coverage
+ ; jest --coverage
+```
+<img src="bank-test-coverage.png" width="550" >
+
 ## Running The Project via Command Line
 
 ```
