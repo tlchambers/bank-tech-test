@@ -10,12 +10,12 @@ class BankAccount {
     }
 
     if (type === "deposit") {
-      this.balance = this.balance + amount;
+      this.balance += amount;
     } else if (type === "withdrawal") {
       if (amount > this.balance) {
         throw new Error("Withdrawl sum exceeds balance");
       }
-      this.balance = this.balance - amount;
+      this.balance -= amount;
     }
 
     this.requestHistory.push({
