@@ -1,0 +1,86 @@
+Bank Statement 
+Multi-Class Planned Design Recipe
+
+1. Describe the Problem
+Given a client makes a deposit of 1000 on 10-01-2023 and a deposit of 2000 on 13-01-2023 and a withdrawal of 500 on 14-01-2023. When she prints her bank statement Then she would see:
+    date   || credit  ||  debit || balance
+14/01/2023 ||         || 500.00 || 2500.00
+13/01/2023 || 2000.00 ||        || 3000.00
+10/01/2023 || 1000.00 ||        || 1000.00
+
+2. Design the Class System
+
+class bankAccount {
+  Constructor() {
+    this.balance = 0;
+    this.requestHistory = [];
+  }
+
+  request(date, type, amount) {
+
+  }
+
+  allTransactions() {
+
+  }
+
+  currentBalance() {
+
+  }
+}
+
+class Statement {
+  Constructor(bankAccount) {
+    this.bankAccount = bankAccount
+  }
+  displayStatment() {
+    
+  }
+}
+
+
+3. Create Examples as Integration Tests
+Create examples of the classes being used together in different situations and combinations that reflect the ways in which the system will be used.
+
+# EXAMPLE
+
+# Displays tabular data (as a table) 
+const t1 = new bankAccount()
+bankAccount.request("10/01/2023", "deposit", 1000)
+bankAccount.request("13/01/2023", "deposit", 2000, balance:)
+
+const statement = new Statement(bankaccount)
+statement.displayStatment()
+
+
+4. Create Examples as Unit Tests
+Create examples, where appropriate, of the behaviour of each relevant class at a more granular level of detail.
+
+# EXAMPLE
+
+# balance starts at 0 when bankAccount is initialise
+const account = new BankAccount()
+expect(account.balance).toEqual(0)
+
+# balance is 1000 when user credit 1000, balance:
+const account = new BankAccount()
+account.request("10/01/2023", "deposit", 1000)
+expect(account.balance).toEqual(1000)
+
+# balance is 3000 when user makes another credit of 2000, balance:
+const account = new BankAccount()
+account.request("10/01/2023", "deposit", 1000)
+account.request("13/01/2023", "deposit", 2000)
+expect(account.balance).toEqual(3000)
+
+# returns all transaction when allTransactions method is called
+const account = new BankAccount()
+account.request("10/01/2023", "deposit", 1000)
+account.request("13/01/2023", "deposit", 2000)
+expect(account.allTransactions).toEqual({"10/01/2023", type: "deposit", amount: 1000, balance: 1000}, {date: "13/01/2023", type: "deposit", amount: 2000, balance: 3000})
+
+Encode each example as a test. You can add to the above list as you go.
+
+5. Implement the Behaviour
+After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
+
