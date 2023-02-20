@@ -53,6 +53,11 @@ To run test coverage:
 
 <img src="bank-tech-test.png" width="550" >
 
+## Approach to Project
+Please see Planning folder
+
+<img src="bank-tech-test.png" width="550" >
+
 ## Purpose of Bank-tech-test
 
 Learning Objective:
