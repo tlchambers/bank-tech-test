@@ -14,7 +14,7 @@ Installation:
 
 To Run Test Suite:
 
-You will need to install `jest` before you are able run the test suite:
+You will need to install `jest` before you are able run the test suites:
 
 ```
  ; npm init -y
@@ -26,6 +26,7 @@ You will need to install `jest` before you are able run the test suite:
 ```
 
 ## Running The Project via Command Line
+
 ```
 ; node
 > Welcome to Node.js v19.4.0.
@@ -39,10 +40,13 @@ You will need to install `jest` before you are able run the test suite:
 ; const statement = new Statement(bankAccount)
 ; statement.displayStatement()
 ```
+
 ## Screen Shot of Running the App and the Output
+
 <img src="bank-tech-test.png" width="550" >
 
 ## Purpose of Bank-tech-test
+
 Learning Objective:
 
 - Improving design and TDD skills through individual practice
